@@ -165,34 +165,6 @@ Open `http://localhost:5173` in your browser to start playing!
    - Win a small grid by getting three of your marks in a row (horizontally, vertically, or diagonally). The sub-grid will then display a large "X", "O", or "DRAW".
    - Win the overall game by winning three small grids in a row on the main board.
 
-## Project Structure
-
-```
-super-tic-tac-toe-game/
-├── client/                     # Frontend React application
-│   ├── public/
-│   ├── src/
-│   │   ├── components/         # Reusable UI components (Board, Grid, EndGame)
-│   │   │   ├── Board.jsx       # The main 3x3 super-grid component
-│   │   │   ├── Grid.jsx        # A single 3x3 sub-grid component
-│   │   │   └── EndGame.jsx     # Game over display
-│   │   ├── hooks/              # Custom React hooks (e.g., useSocket)
-│   │   ├── pages/              # Main application pages (GamePage)
-│   │   │   └── GamePage.jsx    # Contains core game logic and state
-│   │   ├── App.jsx             # Main application component
-│   │   ├── main.jsx            # React entry point
-│   │   └── index.css           # Tailwind CSS directives and custom styles
-│   ├── .env                    # Environment variables for frontend
-│   ├── package.json
-│   └── tailwind.config.js
-├── server/                     # Backend Node.js/Express/Socket.IO server
-│   ├── index.js                # Server entry point and Socket.IO logic
-│   ├── .env                    # Environment variables for backend
-│   └── package.json
-├── .gitignore
-└── README.md
-```
-
 ## Future Enhancements
 
 - **Spectator Mode:** Allow users to watch ongoing games.
