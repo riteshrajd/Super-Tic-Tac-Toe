@@ -44,8 +44,7 @@ To win the game, a player must win three small grids in a row, column, or diagon
 
 ## Live Demo
 
-- **Frontend (Netlify):** [https://super-tictac-toe.netlify.app/](https://super-tictac-toe.netlify.app/)
-- **Backend (Render):** [https://super-tic-tac-toe-backend.onrender.com/](https://super-tic-tac-toe-backend.onrender.com/) (This is the API endpoint, not a UI)
+- **Frontend:** [https://super-tictac-toe.netlify.app/](https://super-tictac-toe.netlify.app/)
 
 ## Technologies Used
 
