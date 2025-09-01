@@ -71,8 +71,8 @@ To win the game, a player must win three small grids in a row, column, or diagon
 ### Clone the Repository
 
 ```bash
-git clone <your-repository-url> # Replace with your actual repo URL
-cd super-tic-tac-toe-game       # Or whatever your main project folder is named
+git clone git@github.com:riteshrajd/Super-Tic-Tac-Toe.git 
+cd Super-tic-tac-toe
 ```
 
 This project typically consists of two main folders: `client` (for frontend) and `server` (for backend).
@@ -86,7 +86,7 @@ This project typically consists of two main folders: `client` (for frontend) and
 
 2. Install backend dependencies:
    ```bash
-   npm install # or yarn
+   npm install 
    ```
 
 3. Create a `.env` file in the `server` directory for environment variables:
@@ -118,14 +118,12 @@ This project typically consists of two main folders: `client` (for frontend) and
 
 2. Install frontend dependencies:
    ```bash
-   npm install # or yarn
+   npm install
    ```
 
 3. Create a `.env` file in the `client` directory to store your backend's URL:
    ```
-   VITE_BACKEND_URL=http://localhost:3000 # Adjust if your backend runs on a different port
-   # For deployment, this would be:
-   # VITE_BACKEND_URL=https://super-tic-tac-toe-backend.onrender.com
+   VITE_BACKEND_URL=http://localhost:3000
    ```
 
 ### Running the Applications
@@ -134,7 +132,7 @@ This project typically consists of two main folders: `client` (for frontend) and
    In the `server` directory:
 
    ```bash
-   npm start # or node server.js (or whatever your entry file is)
+   npm start
    ```
 
    The server will typically start on `http://localhost:3000` (or your specified port).
@@ -143,7 +141,7 @@ This project typically consists of two main folders: `client` (for frontend) and
    In the `client` directory:
 
    ```bash
-   npm run dev # or yarn dev
+   npm run dev
    ```
 
    This will usually open your React app at `http://localhost:5173` (or similar, check your terminal output).

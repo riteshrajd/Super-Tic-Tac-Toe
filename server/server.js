@@ -141,7 +141,7 @@ io.on('connection', (socket) => {
     
     pairs.delete(socket.id);
     pairs.delete(otherPlayer);
-
+    
     io.to(otherPlayer).emit('opponent:disconnected', {message: 'Opponent disconnected!'});
     
     console.log(`User Disconnected: ${socket.id}`);

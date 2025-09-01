@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useSocket } from '../hooks/useSocket';
+// import { useSocket } from '../hooks/useSocket';
 import EndGame from '../components/EndGame';
 import Board from '../components/Board';
 import HomeButton from '../components/HomeButton';
+import { useSocketStore } from '../store/socketStore';
+import { useGameStore } from '../store/gameDataStore';
 
-const GamePage = ({name, room, roomId}) => {
+const GamePage = () => {
 // -1 is 'X' and 1 is 'O' and 0 is 'blank'
   const [grid, setGrid] = useState(Array(9).fill(null).map(()=>Array(9).fill(0)));
   const [myTurn, setMyTurn] = useState(true); // Assuming client starts
@@ -18,7 +20,11 @@ const GamePage = ({name, room, roomId}) => {
   const [metaGrid, setMetaGrid] = useState(Array(9).fill(0));
   const [activeGridPosition, setActiveGridPosition] = useState(4);
 
-  const socket = useSocket();
+  const {name, room, roomId} = useGameStore();
+
+  // const socket = useSocket();
+  const { socket } = useSocketStore();
+
   const handlePlayAgain = () => {
     setGrid(Array(9).fill(null).map(() => Array(9).fill(0)));    
     setMyTurn(true);

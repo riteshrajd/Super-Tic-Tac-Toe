@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import { useCallback } from 'react';
-import { useSocket } from '../hooks/useSocket';
+// import { useSocket } from '../hooks/useSocket';
 import SuperTitle from '../components/SuperTitle';
 import HomeButton from '../components/HomeButton';
+import { useSocketStore } from '../store/socketStore';
+import { useGameStore } from '../store/gameDataStore';
 
 
-const LobbyPage = ({ setStart, setName, setRoom, setRoomId}) => {
+const LobbyPage = () => {
+  const { setStart, setName, setRoom, setRoomId } = useGameStore();
   const [localName, setLocalName] = useState('');
   const [selectType, setSelectType] = useState(false); // for random and create/join room buttons
-  const [joinCreate, setJoinCreate] = useState(false);
+  const [joinCreate, setJoinCreate] = useState(false); 
   const [joining, setJoining] = useState(false);
   const [localRoomId, setLocalRoomId] = useState(null);
 
-  const socket = useSocket();
+  const { socket } = useSocketStore();
   
   const handleNameInput = useCallback(() => {
     if (localName.trim() !== '') {
