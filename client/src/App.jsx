@@ -1,9 +1,9 @@
 import GamePage from './pages/GamePage';
 import LobbyPage from './pages/LobbyPage';
-import { useGameStore } from './store/gameDataStore';
+import { useLobbyStore } from './store/lobbyStore';
 
 const App = () => {
-  const { start } = useGameStore();
+  const { start } = useLobbyStore();
 
   return (
     <div>

@@ -5,11 +5,11 @@ import { useCallback } from 'react';
 import SuperTitle from '../components/SuperTitle';
 import HomeButton from '../components/HomeButton';
 import { useSocketStore } from '../store/socketStore';
-import { useGameStore } from '../store/gameDataStore';
+import { useLobbyStore } from '../store/lobbyStore';
 
 
 const LobbyPage = () => {
-  const { setStart, setName, setRoom, setRoomId } = useGameStore();
+  const { setStart, setName, setRoom, setRoomId } = useLobbyStore();
   const [localName, setLocalName] = useState('');
   const [selectType, setSelectType] = useState(false); // for random and create/join room buttons
   const [joinCreate, setJoinCreate] = useState(false); 

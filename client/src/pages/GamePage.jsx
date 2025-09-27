@@ -4,7 +4,7 @@ import EndGame from '../components/EndGame';
 import Board from '../components/Board';
 import HomeButton from '../components/HomeButton';
 import { useSocketStore } from '../store/socketStore';
-import { useGameStore } from '../store/gameDataStore';
+import { useLobbyStore } from '../store/lobbyStore';
 
 const GamePage = () => {
 // -1 is 'X' and 1 is 'O' and 0 is 'blank'
@@ -20,7 +20,7 @@ const GamePage = () => {
   const [metaGrid, setMetaGrid] = useState(Array(9).fill(0));
   const [activeGridPosition, setActiveGridPosition] = useState(4);
 
-  const {name, room, roomId} = useGameStore();
+  const {name, room, roomId} = useLobbyStore();
 
   // const socket = useSocket();
   const { socket } = useSocketStore();
