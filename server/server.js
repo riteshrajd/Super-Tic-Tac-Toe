@@ -124,6 +124,24 @@ io.on('connection', (socket) => {
     io.to(to).emit('opp:move', {move, from:socket.id , gameOver, winner, nextActiveGrid, metaGrid});
   });
 
+//--------------------VIDEO CONNECTION-----------------------------------------------
+
+socket.on('webrtc-offer', ({ target, sdp }) => {
+  console.log(`Relaying offer from ${socket.id} to ${target}`);
+    io.to(target).emit('webrtc-offer', { from: socket.id, sdp: sdp });
+  });
+
+  socket.on('webrtc-answer', ({ target, sdp }) => {
+    console.log(`Relaying answer from ${socket.id} to ${target}`);
+    io.to(target).emit('webrtc-answer', { from: socket.id, sdp: sdp });
+  });
+
+  socket.on('ice-candidate', ({ target, candidate }) => {
+    io.to(target).emit('ice-candidate', { from: socket.id, candidate });
+  });
+
+//-----------------------------------------------------------------------------------
+  
   socket.on('disconnect', () => {
     if(players.length && players[0].id===socket.id) players.pop();
     deleteIfValueExists(socket.id);

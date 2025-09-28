@@ -4,6 +4,8 @@ import { io } from 'socket.io-client'
 
 const SOCKET_SERVER_URL = import.meta.env.VITE_SOCKET_SERVER || 'http://localhost:3000';
 
-export const useSocketStore = create(() => ({
+export const useSocketStore = create((set) => ({
   socket: io(SOCKET_SERVER_URL),
+  oppSocketId: null,
+  setOppSocketId: (id) =>  set({oppSocketId: id}),
 }));

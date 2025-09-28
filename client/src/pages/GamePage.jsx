@@ -13,7 +13,6 @@ const GamePage = () => {
   const [mySign, setMySign] = useState(-1); // Assuming client is 'X'
   const [waiting, setWaiting] = useState(true);
   const [oppName, setOppName] = useState(null);
-  const [oppSocketId, setOppSocketId] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [reset, setReset] = useState(false);
   const [endGameText, setEndGameText] = useState(null);
@@ -23,7 +22,7 @@ const GamePage = () => {
   const {name, room, roomId} = useLobbyStore();
 
   // const socket = useSocket();
-  const { socket } = useSocketStore();
+  const { socket, oppSocketId, setOppSocketId } = useSocketStore();
 
   const handlePlayAgain = () => {
     setGrid(Array(9).fill(null).map(() => Array(9).fill(0)));    
