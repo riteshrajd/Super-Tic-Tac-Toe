@@ -17,13 +17,13 @@ const pairInRoom = new Map();// key -> socket.id, value -> {roomId, oppName, opp
 console.log(`process env origin: ${process.env.ORIGIN}`)
 
 app.use(cors({
-  origin: process.env.ORIGIN,
+  origin: [process.env.ORIGIN,"https://deploy-preview-1--super-tictac-toe.netlify.app"],
   methods: ["GET", "POST"]
 }));
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.ORIGIN,
+    origin: [process.env.ORIGIN, "https://deploy-preview-1--super-tictac-toe.netlify.app"],
     methods: ["GET", "POST"]
   }
 });
